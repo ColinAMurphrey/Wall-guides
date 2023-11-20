@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wall Guides</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/guides.css">
+
+
+    <style>
+        #desktop {
+            /* display: none; */ 
+            /* ^^^^^^^^^^^^^^ uncomment that comment when this page is complete */
+            display: block;
+        }
+
+        #laptop {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-dark text-light">
+    <div class="container">
+        <div class="heading-container">
+            <h1>How to Image a Device</h1>
+            <p class="lead">This guide will show you how to image a computer using SmartDeploy.</p>
+            <hr>
+        </div>
+
+
+        <div class="body-container">
+
+            <p>
+                <b>Note:</b> at the time of writing this, we probably will have switched to Microsoft SCCM to image computers.
+            </p>
+
+            <button class="btn btn-primary" onclick="toggleText()" id="togglerButton1">
+                Show desktop text
+            </button>
+
+            <div id="desktop">
+                <h3>How to image a Desktop</h3>
+                <p>
+                    Whether you're imaging a laptop or desktop, the imaging process will mostly be the same. To image a computer, complete the following steps:
+                </p>
+
+                <ol>
+                    <li>
+                        Unbox the device and connect it to its power adapter and Ethernet, keeping it powered off until everything is plugged in. If necessary, plug a display, keyboard, and mouse into the device.
+                    </li>
+
+                    <li>
+                        Once you have plugged in the necessary components, connect one of the <b>USB hard drives</b>. These USB hard drives contain <b>SmartDeploy</b>, which is the software we use to image computers.
+                    </li>
+
+                    <li>
+                        <b>Power on the device</b> and press and hold <b>F2</b> to enter the system's BIOS.
+                    </li>
+                </ol>
+
+            </div>
+
+
+
+
+
+
+            <!-- <div id="laptop">This is laptop text</div> -->
+        </div>
+    </div>
+
+    <footer>
+        <a class="btn btn-primary bottom-left" href="../index.html"><i class="bi bi-arrow-left-square-fill"></i> Back</a>
+        <a class="btn btn-primary bottom-right" href="../index.html"><i class="bi bi-arrow-left-square-fill"></i> Back</a>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./scripts/global.js"></script>
+
+    <script>
+        function toggleText() {
+            var desktopText = document.getElementById("desktop");
+            var laptopText = document.getElementById("laptop");
+            var desktopSetting = desktopText.style.display;
+            var laptopSetting = laptopText.style.display;
+            var togglerButton1 = document.getElementById("togglerButton1");
+
+            if (desktopSetting == 'block' && laptopText.style.display == 'none') {
+                desktopText.style.display = 'none';
+                laptopText.style.display = 'block';
+                togglerButton1.innerHTML = 'Show desktop text';
+            } else {
+                desktopText.style.display = 'block';
+                laptopText.style.display = 'none';
+                togglerButton1.innerHTML = 'Show laptop text';
+            }
+        }
+    </script>
+</body>
+</html>
