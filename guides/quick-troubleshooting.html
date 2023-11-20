@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wall Guides</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/guides.css">
+</head>
+<body class="bg-dark text-light">
+    <div class="container">
+        <div class="heading-container">
+            <h1>Quick Troubleshooting Guides</h1>
+            <p class="lead">A list of quick troubleshooting steps.</p>
+            <hr>
+        </div>
+        
+
+        <div class="body-container">
+            <section id="domain">
+                <h2>Adding a Device to the Campus Domain</h2>
+                <p>To add a device to the campus's domain, complete the following steps:</p>
+                <ol>
+                    <li>
+                        Press <b>Win+R</b> on the device's keyboard and  type <b>sysdm.cpl</b>. This will open the System Properties window.
+                    </li>
+                    <li>
+                        Click <b>Change...</b> to open the <b>Computer Name/Domain Changes</b>. window.
+                    </li>
+                    <li>
+                        In the <b>Member of</b> section of this window, make sure that the <b>Domain</b> is set to <b>ust.stthom.edu</b>. If it is not, set it to <b>ust.stthom.edu</b>, and be sure that the <b>Computer name</b> states either <b>USTLAT01XXXX</b> or USTOPT01XXXX (replace the <b>XXXX</b> with the number that is has already been assigned if necessary).
+
+                        <ol type="a">
+                            <li>Use <b>USTLAT</b> if the device is a laptop.</li>
+                            <li>Use <b>USTOPT</b> if the device is a desktop.</li>
+                        </ol>
+                    </li>
+
+                    <li>
+                        Click <b>OK</b>. You will be prompted to enter credentials to join the computer to the school's domain. Enter your UST credentials (username and password).
+                        <ul>
+                            <li><b>NOTE:</b> The <u>.\administrator</u> and <u>DT password</u> will not work when joining the domain.</li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        If your credentials have been accepted, you should receive a prompt that states, "Welcome to the ust.stthom.edu domain." If you have received an <b>Access denied</b> eror, temporarily use the <b>ustsnowstudents</b> username and password; talk to Justin Puder when you have a chance so that you have permission to add computers to the school's domain. Click <b>OK</b>.
+                    </li>
+
+                    <li>
+                        Click <b>OK</b> when prompted to restart the computer. Click <b>Close</b> in the System Properties  window. Click <b>Restart Now</b> when prompted.
+                    </li>
+                </ol>
+            </section>
+
+            <section id="settings">
+                <h2>Using Control Panel instead of Windows Settings</h2>
+                <p>
+                    If you are working in IT, you should be using Control Panel, Task Manager, and Services for tasks such as disallowing the computer to sleep, disabling/enabling startup apps, and disabling services. Windows Settings does not change everything and sometimes doesn't apply changes at all. 
+                </p>
+
+                <div id="controlPanel">
+                    <h3>Disallowing Sleep in Control Panel</h3>
+                    <p>
+                        There is a more formal way of disallowing a computer to sleep, but this setting can be found in the BIOS of most computers on campus. However, Windows has a workaround to disallow sleep so you do not have to restart the computer to enter the BIOS to disallow sleep. To do this, complete the following steps:
+                    </p>
+
+                    <ol>
+                        <li>
+                            Click on the Windows Start Menu, type <b>Control Panel</b>.
+                        </li>
+                        <li>
+                            In the top-right search bar, type <b>power</b> and click <b>Power Options</b>.
+                        </li>
+                        <li>
+                            Under <b>Selected plan</b>, click <b>Change plan settings</b> for your selected power plan.
+                        </li>
+                        <li>
+                            The device you are working on may or may not look different compared to the image below. However, change the <b>Turn off the display</b> and <b>Put the computer to sleep settings</b> to <b>Never</b>.
+                        </li>
+
+                        <img class="img-fluid" src="../assets/quick-troubleshooting/Don't use Windows Settings for everything/Control Panel stuff/Display and sleep.png">
+
+                        <li>
+                            Click <b>Save changes</b>.
+                        </li>
+                    </ol>
+                </div>
+                
+                <div id="taskManager">
+                    <h3>Changing Startup Applications in Task Manager</h3>
+                    <p>
+                        Again, while Windows Settings contains a section for changing the Startup applications, the changes you make in Windows Settings do not apply, and you will have those applications launch at login after rebooting. Complete the following steps:
+                    </p>
+
+                    <ol>
+                        <li>
+                            Click on the Windows Start Menu, type <b>Task Manager</b>.
+                        </li>
+                        <li>
+                            Click on the <b>Startup</b> tab within Task Manager. Here is where you will enable/disable startup applications. <b><u>NOT</u></b> Windows Settings.
+                        </li>
+
+                        <img class="img-fluid" src="../assets/quick-troubleshooting/Don't use Windows Settings for everything/Task Manager stuff/Startup tab.png">
+                    </ol>
+
+                    <p>
+                        If you notice that Adobe, Edge, etc. are launching at startup, Task Manager is where you would resolve this issue.
+                    </p>
+                </div>
+
+                <div id="edge">
+                    <h3>Microsoft Edge doing Microsoft Things (being annoying)</h3>
+                    <p>
+                        Upon launching Edge for the first time, you will see the following screen:
+                    </p>
+                    <img class="img-fluid" src="../assets/quick-troubleshooting/Edge being annoying/edge screen 1.png">
+
+                    <p>
+                        This guide will show you multiple ways to stop this from happening.
+                    </p>
+
+                    <div class="methods">
+                        <h4>Method 1</h4>
+                        <ol>
+                            <li>
+                                Click <b>Start without your data</b>.
+                            </li>
+                            <li>
+                                Uncheck, <b>Bring your data from other browsers regularly. You can manage your preferences any time in Settings</b>. Click <b>Conifirm and continue</b>.
+                            </li>
+                            <li>
+                                Uncheck <b>Make your Microsoft experience more useful to you</b>. Click <b>Confirm and start browsing.</b>
+                            </li>
+                            <li>
+                                Close Edge because it's garbage.
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="methods">
+                        <h4>Method 2</h4>
+                        <ol>
+                            <li>
+                                Go to Task Manager by pressing <b>Ctrl+Shift+Esc</b> on your keyboard.
+                            </li>
+                            <li>
+                                Go to the <b>Processes</b> tab.
+                            </li>
+                            <li>
+                                Right-click on Edge and click <b>End task</b>.
+                            </li>
+                        </ol>
+                    </div>
+
+
+                </div>
+                
+            </section>
+            
+        </div>
+    </div>
+
+    <footer>
+        <a class="btn btn-primary bottom-left" href="../index.html"><i class="bi bi-arrow-left-square-fill"></i> Back</a>
+        <a class="btn btn-primary bottom-right" href="../index.html"><i class="bi bi-arrow-left-square-fill"></i> Back</a>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./scripts/global.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+/* .container {
+    max-width: 40%;
+} */
+
+.body-container h2, .body-container h3, .body-container h4 {
+    font-weight: 700;
+}
+
+.body-container h2 {
+    color: rgb(255, 57, 57);
+}
+
+.body-container h3 {
+    color: rgb(255, 145, 0);
+}
+
+.body-container h4 {
+    color: rgb(218, 195, 63);
+}
+
+li, img {
+    margin-bottom: 15px;
+}
