@@ -6,19 +6,28 @@
     <title>Wall Guides</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../styles/global.css">
+    <!-- <link rel="stylesheet" href="../styles/global.css"> -->
+    <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="../styles/guides.css">
 
 
     <style>
         #desktop {
-            /* display: none; */ 
+            display: none; 
             /* ^^^^^^^^^^^^^^ uncomment that comment when this page is complete */
-            display: block;
+            /* display: block; */
         }
 
         #laptop {
             display: block;
+        }
+
+        #togglerButton1 {
+            margin-bottom: 1rem;
+        }
+
+        .w-100 {
+            max-width: 50vw;
         }
     </style>
 </head>
@@ -38,13 +47,13 @@
             </p>
 
             <button class="btn btn-primary" onclick="toggleText()" id="togglerButton1">
-                Show desktop text
+                Show desktop-specific instructions
             </button>
 
             <div id="desktop">
-                <h3>How to image a Desktop</h3>
+                <h2>How to image a Desktop</h2>
                 <p>
-                    Whether you're imaging a laptop or desktop, the imaging process will mostly be the same. To image a computer, complete the following steps:
+                    The following instructions are specific to Desktops.
                 </p>
 
                 <ol>
@@ -57,18 +66,288 @@
                     </li>
 
                     <li>
-                        <b>Power on the device</b> and press and hold <b>F2</b> to enter the system's BIOS.
+                        <b>Power on the device</b> and immediately spam <b>F2</b> to enter the system's BIOS.
                     </li>
                 </ol>
 
+                <section id="biosConfig">
+                    <h3>Configuring the BIOS</h3>
+                    <p>
+                        Prior to beginning the imaging process, there will be a few steps you will have to take prior to starting the image. After entering the BIOS, there are several settings that we will have to change.
+                    </p>
+
+                    <h4>System Management Tab</h4>
+                    <p>
+                        Prior to doing anything in the BIOS, be sure that the computer has an asset tag on it (should look like a barcode).
+                    </p>
+                    <ol>
+                        <li>
+                            Starting in the <b>System Management</b> tb on the left pane, enter the asset tag in the <b>Asset Tag</b> textbox in the BIOS.
+                        </li>
+                        <li>
+                            Scroll down to <b>Wake on LAN/WLAN</b>, enable <b>LAN Only</b>.
+                        </li>
+                        <li>
+                            Scroll down to <b>Auto On Time</b>, set this to <b>Every Day</b> and set the time to <b>11:55 PM</b>.
+                        </li>
+                    </ol>
+
+                    <!-- <div id="biosImages" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="../assets/bios-configuration/Asset Tag.png" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../assets/bios-configuration/Wake on LAN.png" class="d-block w-100">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="../assets/bios-configuration/Auto On Time.png" class="d-block w-100">
+                            </div>
+                        </div>
+                    </div> -->
+
+                    <h4>Power tab</h4>
+                    <p>
+                        Go to the <b>Power</b> tab to complete the following steps:
+                    </p>
+                    <ol>
+                        <li>
+                            Go to the <b>AC Recovery</b> section and enable/disable according to the following:
+                            
+                            <ul>
+                                <li>
+                                    If the computer <b><u>IS</u></b> intended to be a HyFlex computer, click <b>Power On</b> if it is not toggled already.
+                                </li>
+                                <li>
+                                    If the computer <b><u>IS NOT</u></b> intended to be a HyFlex computer, click <b>Power Off</b> if it is not toggled already.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- <img src="../assets/bios-configuration/AC Behavior.png" class="d-block w-100"> -->
+
+                        <li>
+                            Go to the <b>Block Sleep</b> section and enable/disable according to the following:
+
+                            <ul>
+                                
+                                <li>
+                                    If the computer <b><u>IS</u></b> intended to be a HyFlex computer, <b>toggle this switch <u>on</u></b> so the computer does not go to sleep.
+                                </li>
+                                <li>
+                                    If the computer <b><u>IS NOT</u></b> intended to be a HyFlex computer, <b>toggle this switch<u>off</u></b> so the computer is able to go to sleep.
+                                </li>
+                            </ul>
+                        </li>
+
+                        <!-- <img src="/assets/bios-configuration/Block Sleep.png" class="d-block w-100"> -->
+                    </ol>
+
+                    <h4>Passwords tab</h4>
+                    <p>
+                        Go to the <b>Passwords</b> tab on the left pane and complete the following steps:
+                    </p>
+
+                    <ol>
+                        <li>
+                            In the <b>Admin Password</b> section, you will see two textboxes, one labeled <b>Enter the old password</b> and the other labeled <b>Enter the new password</b>.
+
+                            <ol type="a">
+                                <li>
+                                    It should be noted that when configuring the password, you will have to enter the password twice to confirm the password is correct.
+                                </li>
+                            </ol>
+                        </li>
+
+                        <li>
+                            <p>
+                                In the <b>Enter the new password</b> textbox, enter the <span href="#" data-bs-toggle="tooltip" data-bs-title="60077">password</span>.
+                            </p>
+                            
+                            <p class="lil-p">
+                                <b>Note:</b> hover over where it says "password" in the line above.
+                            </p>
+                        </li>
+
+                        <!-- <img src="/assets/bios-configuration/Admin Password.png" class="d-block w-100"> -->
+                    </ol>
+                </section>
             </div>
 
+            <div id="laptop">
+                <h2>How to image a Laptop</h2>
+                <p>
+                    The following instructions are specific to laptops.
+                </p>
+                
+                <ol>
+                    <li>
+                        Unbox the device and connect it to its power adapter and Ethernet, keeping it powered off until everything is plugged in. If necessary, plug a display, keyboard, and mouse into the device.
+                    </li>
 
+                    <li>
+                        Once you have plugged in the necessary components, connect one of the <b>USB hard drives</b>. These USB hard drives contain <b>SmartDeploy</b>, which is the software we use to image computers.
+                    </li>
 
+                    <li>
+                        <b>Power on the device</b> and immediately spam <b>F2</b> to enter the system's BIOS.
+                    </li>
+                </ol>
 
+                <div id="laptop-bios-configuration">
+                    <h3>BIOS Configuration</h3>
+                    <p>
+                        Prior to beginning the imaging process, there will be a few steps you will have to take prior to starting the image. After entering the BIOS, there are several settings that we will have to change.
+                    </p>
 
+                    <ol>
+                        <li>
+                            Go to the <b>System Management</b> tab on the left pane, enter the asset tag in the <b>Asset Tag</b> textbox in the BIOS.
+                        </li>
 
-            <!-- <div id="laptop">This is laptop text</div> -->
+                        <li>
+                            Go to the <b>Passwords</b> tab on the left pane.
+                        </li>
+                        
+                        <li>
+                            In the <b>Admin Password</b> section, you will see two textboxes, one labeled <b>Enter the old password</b> and the other labeled <b>Enter the new password</b>.
+
+                            <ol type="a">
+                                <li>
+                                    It should be noted that when configuring the password, you will have to enter the password twice to confirm the password is correct.
+                                </li>
+                            </ol>
+                        </li>
+
+                        <li>
+                            <p>
+                                In the <b>Enter the new password</b> textbox, enter the <span href="#" data-bs-toggle="tooltip" data-bs-title="60077">password</span>.
+                            </p>
+                            
+                            <p class="lil-p">
+                                <b>Note:</b> hover over where it says "password" in the line above.
+                            </p>
+                        </li>
+
+                        <!-- <img src="/assets/bios-configuration/Admin Password.png" class="d-block w-100"> -->
+                    </ol>
+                </div>
+            </div>
+
+            <div id="postBios">
+                <p>
+                    One last change you should make is to change the boot priority of the device. To do this, go to the <b>Boot Configuration</b> tab in the left pane. Select the Seagate USB hard drive and move it to the top of the boot priorities.
+                </p>
+
+                <div class="note">
+                    <h3 class="bi bi-journal-bookmark-fill"> Note</h3>
+                    <p>
+                        if you do not see this option, you probably don't have the USB hard drive plugged in. Exit the BIOS and plug in the USB hard drive, then re-enter the BIOS so you can move this boot device to the top of the boot priorities.
+                    </p>
+                </div>
+
+                <p>
+                    Click <b>Apply changes</b> at the bottom of the screen and exit the BIOS. If you see that SmartDeploy has booted, move on to the next steps.
+                </p>
+            </div>
+            
+            <div id="imagingProcess">
+                <h2>Imaging Process</h2>
+                
+                <p>
+                    Once you SmartDeploy has loaded, there will be a popup titled <b>Unattended Mode</b> along with a counddown. Let this countdown finish. The image will install itself and Windows will eventually be loaded onto the device.
+                </p>
+
+                <p>
+                    Complete the rest of the steps after Windows has been installed:
+                </p>
+
+                <p>
+                        Log into Windows using the <b>Administrator</b> profile (<span data-bs-toggle="tooltip" title=".\administrator">username</span> // <span data-bs-toggle="tooltip" title="DT@dmin18">password</span>).
+                </p>
+
+                <div class="note">
+                    <h3 class="bi bi-journal-bookmark-fill"> Note</h3>
+                    <p>
+                        After the device has booted into Windows, the computer may restart itself to update its BIOS. This can happen at a completely random time.
+                    </p>
+                    <p>
+                        Do not turn the computer off during this process.
+                    </p>
+                </div>
+
+                <h3>Updating the Device</h3>
+                <p>
+                    To update the device, you will be using the Windows Settings program and Dell Command Update, both of wich are already installed on the computer.
+                </p>
+
+                <p>
+                    Complete the following steps:
+                </p>
+
+                <ol>
+                    <li>
+                        Go to <b><u>Windows Settings &rightarrow; Update & Securiy &rightarrow; Windows Update</u></b>. Click <b><u>Check for updates</u></b>
+
+                        <ul>
+                            <li>
+                                If you are prompted to install Windows 11 upon checking for updates, click <b>Stay on Windows 10 for now</b>. At the time of writing, Windows 11 is currently not supported by many IT departments, nor is it compatible with our Fortinet VPN.
+                            </li>
+
+                            <li>
+                                If you accidentally install Windows 11 onto the device, restart the imaging process from the beginning down to this step.
+                            </li>
+
+                            <li>
+                                If you are prompted to restart the device to apply updates, it is most efficient to wait until all of the updates listed state <b>Pending restart</b>. After all of the updates state Pending restart, restart the device.
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        Repeat step 1 until there are no more updates listed in Windows Settings.
+                    </li>
+
+                    <li>
+                        After there are no more updates in Windows Settings, open Dell Command Update.
+                    </li>
+                </ol>
+
+                <div class="note">
+                    <h3 class="bi bi-journal-bookmark-fill"> Note</h3>
+                    <p>
+                        If you are prompted to run automatically with the default settings, click <b>No</b>. Click <b>OK</b>.
+                    </p>
+                </div>
+                
+                <ol start="4">
+                    <li>
+                        Click <b>Check</b> to check for updates. The program will check for driver updates available for the device.
+
+                        <ul>
+                            <li>
+                                After the device has found updates, check the box that states <b>Automatically restart system (when required)</b>. Click <b>Install</b>.
+                            </li>
+
+                            <li>
+                                In the middle of installing updates through Dell Command Update, you may run into an issue where the program will crash and you can no longer open it. To solve this issue, uninstall Dell Command Update from Control Panel. Go to File Explorer and delete the Dell folders from <b>C:\Program Files</b> and <b>C:\Program Files (x86)</b>. Download the latest version of Dell Command Update from Dell's website.
+                            </li>
+
+                            <li>
+                                Restart when necessary.
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        Repeat step 3 until there are no more updates in Dell Command Update. When there are not more updates in Dell Command Update, check for updates once more in Windows Settings to be sure.
+                    </li>
+
+                    <li>
+                        If there are no more updates to be installed, you can shut down the computer and label it as ready to be deployed.
+                    </li>
+                </ol>
+            </div>
         </div>
     </div>
 
@@ -79,7 +358,7 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="./scripts/global.js"></script>
+    <script src="/scripts/global.js"></script>
 
     <script>
         function toggleText() {
@@ -92,11 +371,11 @@
             if (desktopSetting == 'block' && laptopText.style.display == 'none') {
                 desktopText.style.display = 'none';
                 laptopText.style.display = 'block';
-                togglerButton1.innerHTML = 'Show desktop text';
+                togglerButton1.innerHTML = 'Show desktop-specific instructions';
             } else {
                 desktopText.style.display = 'block';
                 laptopText.style.display = 'none';
-                togglerButton1.innerHTML = 'Show laptop text';
+                togglerButton1.innerHTML = 'Show laptop-specific instructions';
             }
         }
     </script>
