@@ -6,45 +6,10 @@ body {
     margin-right: 15%;
 }
 
-@media (max-width: 3273px) {
-    body {
-        font-size: 8pt;
-    }
-
-    .lil-p {
-        font-size: 4pt;
-    }
-}
-
-@media (min-width: 1733px) {
-    body {
-        font-size: 14pt;
-    }
-    
-    .lil-p {
-        font-size: 7pt;
-    }
-}
-
-
-
-
 /* Cards */
-@media (min-width: 992px) {
-    .card {
-        min-height: 116px;
-    }
-}
-
-@media (max-width: 992px) {
-    .card {
-        /* max-height: 85px; */
-        margin-bottom: 10px;
-    }
-
-    body {
-        font-size: 8pt;
-    }
+.card {
+    min-height: 116px;
+    margin-bottom: 1rem;
 }
 
 .card:hover, a {
@@ -68,9 +33,9 @@ body {
     right: 15px;
 }
 
-/* .lil-p {
+.lil-p {
     font-size: 7pt;
-} */
+}
 
 .click-here {
     color: skyblue;
