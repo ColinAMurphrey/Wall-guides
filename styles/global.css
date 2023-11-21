@@ -43,3 +43,8 @@ body {
 .lil-p {
     font-size: 7pt;
 }
+
+.click-here {
+    color: skyblue;
+    text-decoration: underline;
+}
